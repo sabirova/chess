@@ -1,0 +1,42 @@
+package com.chessgame.server;
+
+import com.chessgame.game.Player;
+import com.chessgame.messenger.Command;
+import com.chessgame.messenger.Message;
+import com.chessgame.messenger.Messenger;
+
+
+import java.io.IOException;
+import java.net.Socket;
+
+public class ClientThread extends Thread {
+
+    private Player player;
+    private ClientThreadMessenger messenger;
+
+    public ClientThread(Socket socket) {
+        try {
+            messenger = new ClientThreadMessenger(new Messenger(socket));
+            messenger.getMessenger().sendMessageXML(new Message(Command.SERVER,"Connected"));
+        } catch (IOException ex) {
+            //TODO: logging
+            ex.printStackTrace();
+        }
+        start();
+    }
+
+    @Override
+    public void run() {
+        try {
+            messenger.waitMessage();
+        } catch (IOException ex) {
+            //TODO: logging
+            System.out.println("User exit");
+        }
+
+    }
+
+
+
+
+}
