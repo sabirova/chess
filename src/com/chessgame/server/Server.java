@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Server {
 
-    ServerSocket serverSocket;
+    private ServerSocket serverSocket;
 
     public Map<Player, Messenger> clients = new HashMap<Player, Messenger>();
 
@@ -28,6 +28,10 @@ public class Server {
             }
         }
         return str.toString();
+    }
+
+    public ServerSocket getServerSocket() {
+        return serverSocket;
     }
 
 
