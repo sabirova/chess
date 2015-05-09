@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b0897224-ede8-4030-86b4-2367a0c54945" name="Default" comment="made serverSocket is private and added getter for serverSocket">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/server/Server.java" afterPath="$PROJECT_DIR$/src/com/chessgame/server/Server.java" />
-    </list>
+    <list default="true" readonly="true" id="b0897224-ede8-4030-86b4-2367a0c54945" name="Default" comment="made serverSocket is private and added getter for serverSocket" />
     <ignored path="chess.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -838,7 +836,7 @@
       <workItem from="1431059696388" duration="2625000" />
       <workItem from="1431097562197" duration="4674000" />
       <workItem from="1431183258351" duration="1332000" />
-      <workItem from="1431186136277" duration="2820000" />
+      <workItem from="1431186136277" duration="2865000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1431038887033</created>
@@ -874,10 +872,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139318000" />
+    <option name="totallyTimeSpent" value="139363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
