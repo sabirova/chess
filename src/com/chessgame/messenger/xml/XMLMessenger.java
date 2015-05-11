@@ -38,7 +38,7 @@ public class XMLMessenger {
 
         XMLInputStream xmlin = new XMLInputStream(input);
 
-        xmlin.recive();
+        xmlin.receive();
 
         request = docBuilder.parse(xmlin);
 

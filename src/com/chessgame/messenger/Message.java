@@ -50,15 +50,19 @@ public class Message implements Serializable {
 
     public static Message fromString(String str) throws InvalidMessageException {
         Command command;
-        if (str.contains(" ")) {
-            String args[] = str.split(" ");
-            command = Command.fromValue(args[0]);
-            String text = args[1];
-            return new Message(command, text);
-        } else if ((command = Command.fromValue(str)) != null) {
-            return new Message(command, command.toString());
+        if (str != null) {
+            str = str.trim();
+            if (str.contains(" ")) {
+                String args[] = str.split(" ");
+                command = Command.fromValue(args[0]);
+                String text = args[1];
+                return new Message(command, text);
+            } else if ((command = Command.fromValue(str)) != null) {
+                return new Message(command, command.toString());
+            }
         }
         throw  new InvalidMessageException();
+
     }
 
     public static Document convertToXML(Message message) {

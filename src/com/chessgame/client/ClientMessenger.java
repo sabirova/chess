@@ -18,6 +18,10 @@ public class ClientMessenger {
         this.messenger = messenger;
     }
 
+    public Messenger getMessenger() {
+        return messenger;
+    }
+
     public void waitMessage() throws IOException {
        while(connected){
            try {
@@ -26,12 +30,10 @@ public class ClientMessenger {
                    return;
                }
                readMessage(message);
-               messenger.sendMessageXML(readFromConsole());
            } catch (JAXBException ex) {
                ex.printStackTrace();
            }
        }
-
     }
 
     public void readMessage(Message message) throws JAXBException{
@@ -46,25 +48,5 @@ public class ClientMessenger {
             }
         }
     }
-
-    public Message readFromConsole() {
-        Message message = null;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            String str = br.readLine();
-            message = Message.fromString(str);
-        } catch (IOException ex) {
-            Logger.getLogger(ClientMessenger.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvalidMessageException ex) {
-            System.out.println("Incorrect message");
-            //try again
-            message = readFromConsole();
-        }
-
-        return message;
-    }
-
-
-
 
 }

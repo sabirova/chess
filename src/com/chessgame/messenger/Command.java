@@ -21,7 +21,11 @@ public enum Command {
     @XmlEnumValue("Server")
     SERVER("Server"),
     @XmlEnumValue("List")
-    LIST("List");
+    LIST("List"),
+    @XmlEnumValue("Refuse")
+    REFUSE("Refuse"),
+    @XmlEnumValue("Ping")
+    PING("Ping");
 
     private final String value;
 
@@ -33,13 +37,12 @@ public enum Command {
         return value;
     }
 
-
     public static Command fromValue(String value) {
         for (Command c: Command.values()) {
             if (c.getValue().equalsIgnoreCase(value)) {
                 return c;
             }
         }
-        throw new IllegalArgumentException("No Enum specified for this string");
+        return null;
     }
 }

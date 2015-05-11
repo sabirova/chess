@@ -14,7 +14,7 @@ public class ServerApp {
         try {
             Server server = new Server(8080);
             while (true) {
-                Socket client = server.serverSocket.accept();
+                Socket client = server.getServerSocket().accept();
                 new ClientThread(server, client);
             }
         } catch (IOException e) {

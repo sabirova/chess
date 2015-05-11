@@ -13,7 +13,7 @@ public class XMLInputStream extends ByteArrayInputStream {
         this.input = new DataInputStream(input);
     }
 
-    public void recive() throws IOException {
+    public void receive() throws IOException {
         int i = input.readInt();
         byte[] data = new byte[i];
         input.read(data, 0, i);

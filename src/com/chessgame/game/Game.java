@@ -12,9 +12,11 @@ public class Game {
     public Game(ClientThread whitePlayer, ClientThread blackPlayer) {
         this.whitePlayer = whitePlayer;
         this.blackPlayer = blackPlayer;
+        whitePlayer.setCanMove(true);
     }
 
     public void play() {
         Board board = new Board();
     }
+
 }

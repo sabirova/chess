@@ -6,23 +6,25 @@ import com.chessgame.messenger.Message;
 import com.chessgame.messenger.Messenger;
 
 
+import javax.xml.soap.SOAPException;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class ClientThread extends Thread {
 
     private Player player;
     private ClientThreadMessenger messenger;
-    Server server;
+    private Server server;
+    private boolean canMove;
 
-    public ClientThread(Server server, Socket socket) {
+    public ClientThread(Server server, Socket socket) throws IOException {
         this.server = server;
         try {
             messenger = new ClientThreadMessenger(server, new Messenger(socket));
             messenger.getMessenger().sendMessageXML(new Message(Command.SERVER,"Connected"));
-            while (!messenger.login) {
-                player = messenger.login();
-            }
+        } catch (SocketException ex) {
+            System.out.println("Connection error");
         } catch (IOException ex) {
             //TODO: logging
             ex.printStackTrace();
@@ -32,16 +34,42 @@ public class ClientThread extends Thread {
 
     @Override
     public void run() {
+        loginPlayer();
         try {
             while (true) {
                 messenger.waitMessage();
             }
+        } catch (SocketException ex) {
+            server.getClients().remove(player);
+            System.out.println("Player " + player + " left");
         } catch (IOException ex) {
-            Server.clients.remove(player);
-            System.out.println("User exit");
+            server.getClients().remove(player);
+            System.out.printf("player " + player + " left");
         }
     }
 
+    public void loginPlayer() {
+        try {
+            while (!messenger.login) {
+                player = messenger.login();
+            }
+            server.getClients().put(player, this);
+        } catch (IOException ex) {
+            System.out.println("Login error");
+        }
+    }
+
+    public ClientThreadMessenger getMessenger() {
+        return messenger;
+    }
+
+    public void setCanMove(boolean canMove) {
+        this.canMove = canMove;
+    }
+
+    public boolean isCanMove() {
+        return canMove;
+    }
 
 
 
