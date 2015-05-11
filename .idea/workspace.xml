@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0897224-ede8-4030-86b4-2367a0c54945" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/chessgame/client/ReadConsole.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chess/com/chessgame/client/Client.class" afterPath="$PROJECT_DIR$/out/production/chess/com/chessgame/client/Client.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chess/com/chessgame/client/ClientMessenger$1.class" afterPath="$PROJECT_DIR$/out/production/chess/com/chessgame/client/ClientMessenger$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chess/com/chessgame/client/ClientMessenger.class" afterPath="$PROJECT_DIR$/out/production/chess/com/chessgame/client/ClientMessenger.class" />
@@ -15,17 +14,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chess/com/chessgame/server/Server.class" afterPath="$PROJECT_DIR$/out/production/chess/com/chessgame/server/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chess/com/chessgame/messenger/xml/XMLInputStream.class" afterPath="$PROJECT_DIR$/out/production/chess/com/chessgame/messenger/xml/XMLInputStream.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chess/com/chessgame/messenger/xml/XMLMessenger.class" afterPath="$PROJECT_DIR$/out/production/chess/com/chessgame/messenger/xml/XMLMessenger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/client/Client.java" afterPath="$PROJECT_DIR$/src/com/chessgame/client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/client/ClientMessenger.java" afterPath="$PROJECT_DIR$/src/com/chessgame/client/ClientMessenger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/server/ClientThread.java" afterPath="$PROJECT_DIR$/src/com/chessgame/server/ClientThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/server/ClientThreadMessenger.java" afterPath="$PROJECT_DIR$/src/com/chessgame/server/ClientThreadMessenger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/messenger/Command.java" afterPath="$PROJECT_DIR$/src/com/chessgame/messenger/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/game/Game.java" afterPath="$PROJECT_DIR$/src/com/chessgame/game/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/messenger/Message.java" afterPath="$PROJECT_DIR$/src/com/chessgame/messenger/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/server/Server.java" afterPath="$PROJECT_DIR$/src/com/chessgame/server/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/server/ServerApp.java" afterPath="$PROJECT_DIR$/src/com/chessgame/server/ServerApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/messenger/xml/XMLInputStream.java" afterPath="$PROJECT_DIR$/src/com/chessgame/messenger/xml/XMLInputStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/chessgame/messenger/xml/XMLMessenger.java" afterPath="$PROJECT_DIR$/src/com/chessgame/messenger/xml/XMLMessenger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chess.iws" />
@@ -954,7 +942,7 @@
       <workItem from="1431186136277" duration="2865000" />
       <workItem from="1431203949587" duration="9722000" />
       <workItem from="1431236785413" duration="16930000" />
-      <workItem from="1431368147509" duration="908000" />
+      <workItem from="1431368147509" duration="989000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1431038887033</created>
@@ -986,15 +974,21 @@
       <option name="project" value="LOCAL" />
       <updated>1431183889263</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Communication between clients">
+      <created>1431369121327</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1431369121327</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166923000" />
+    <option name="totallyTimeSpent" value="167004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1069,7 +1063,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add" />
     <MESSAGE value="made serverSocket is private and added getter for serverSocket" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Communication between clients" />
+    <option name="LAST_COMMIT_MESSAGE" value="Communication between clients" />
     <option name="CHANGE_BROWSER_SETTINGS">
       <map>
         <entry key="svn">
