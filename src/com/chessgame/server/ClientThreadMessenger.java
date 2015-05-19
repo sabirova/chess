@@ -14,7 +14,6 @@ public class ClientThreadMessenger {
     private Player player;
     boolean login;
     Server server;
-    ClientThread anotherClientThread;
 
     public ClientThreadMessenger(Server server, Messenger messenger) {
         this.server = server;
@@ -56,7 +55,7 @@ public class ClientThreadMessenger {
                 break;
             }
             case ACCEPT: {
-
+                acceptMessage(message.getText());
             }
             case SERVER: {
                 System.out.println(message.getText());
@@ -97,21 +96,24 @@ public class ClientThreadMessenger {
 
     public void joinPlayer(String name) throws IOException {
         Player anotherPlayer = new Player(name);
-        if (server.getClients().containsKey(anotherPlayer)) {
+        ClientThread anotherClientThread;
+        if (server.getClients().containsKey(new Player(name))) {
             anotherClientThread = server.getClients().get(anotherPlayer);
-            if (getAcceptForPlay()) {
+            anotherClientThread.getMessenger().getMessenger().sendMessageXML
+                    (new Message(Command.SERVER, "Player " + player + " wants play with you. Enter: Accept or Refuse"));
+            /*if (getAcceptForPlay(anotherClientThread)) {
                 player.setFree(false);
                 anotherPlayer.setFree(false);
                 server.createGame(server, server.getClients().get(player), anotherClientThread);
             } else {
                 messenger.sendMessageXML(new Message(Command.SERVER, "Player " + anotherPlayer + " refused to play"));
-            }
+            }*/
         } else {
             messenger.sendMessageXML(new Message(Command.SERVER, "This player is not in the system"));
         }
     }
 
-    public boolean getAcceptForPlay() throws IOException {
+   /* public boolean getAcceptForPlay(ClientThread anotherClientThread) throws IOException {
         anotherClientThread.getMessenger().getMessenger().sendMessageXML
                 (new Message(Command.SERVER, "Player " + player + " wants play with you. Enter: Accept or Refuse"));
         Message accessMessage;
@@ -119,11 +121,28 @@ public class ClientThreadMessenger {
         if (accessMessage != null && accessMessage.getCommand() == Command.ACCEPT) {
             return true;
         }
+        accessMessage = messenger.getMessageXML();
+        if (accessMessage != null && accessMessage.getCommand() == Command.ACCEPT) {
+            return true;
+        }
         return false;
+    }*/
+
+    public void acceptMessage(String name) throws IOException{
+        Player anotherPlayer = new Player(name);
+        ClientThread anotherClientThread;
+        if (server.getClients().containsKey(new Player(name))) {
+            anotherClientThread = server.getClients().get(anotherPlayer);
+            player.setFree(false);
+            anotherPlayer.setFree(false);
+            server.createGame(server, server.getClients().get(player), anotherClientThread);
+        } else {
+            messenger.sendMessageXML(new Message(Command.SERVER, "This player is not in the system"));
+        }
     }
 
     public void turn(String text) throws IOException {
-        anotherClientThread.getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, text));
+        //anotherClientThread.getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, text));
     }
 
 

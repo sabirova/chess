@@ -8,6 +8,10 @@ public class Player {
     private Color color;
     private String name;
     private boolean free = true;
+    private int rating;
+    private int gamesCount;
+    private int winGames;
+    private int losGames;
 
     public Player() {
 
@@ -31,6 +35,54 @@ public class Player {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setGamesCount(int games) {
+        this.gamesCount = games;
+    }
+
+    public int getGamesCount() {
+        return gamesCount;
+    }
+
+    public void setWinGames(int winGames) {
+        this.winGames = winGames;
+    }
+
+    public int getWinGames() {
+        return winGames;
+    }
+
+    public void setLosGames(int losGames) {
+        this.losGames = losGames;
+    }
+
+    public int losWinGames() {
+        return losGames;
+    }
+
+    public void loseGame() {
+        gamesCount++;
+        losGames++;
+    }
+
+    public void winGame(int opponentRating) {
+        gamesCount++;
+        winGames++;
+        rating = (int)(opponentRating * 0.25);
+    }
+
+    public void drawGame(int opponentRating) {
+        gamesCount++;
+        rating = (int)(opponentRating * 0.125);
     }
 
     public boolean isOwnPiece(Piece piece){

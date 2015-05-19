@@ -1,0 +1,14 @@
+2015-05-19 15:18:50,420 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 15:18:50,420 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 15:20:11,604 [Thread-3] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:01:31,350 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:01:34,137 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:01:58,474 [Thread-2] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:01:58,477 [Thread-2] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:02:28,996 [Thread-4] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:07:10,473 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset by peer: socket write error
+2015-05-19 16:07:10,473 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:08:34,327 [Thread-2] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset by peer: socket write error
+2015-05-19 16:08:36,358 [Thread-3] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:13:27,968 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:13:29,952 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset

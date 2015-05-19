@@ -58,7 +58,7 @@ public class Server {
         games.add(game);
         whitePlayer.getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "game"));
         blackPlayer.getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "game"));
-        game.play();
+        int result = game.play();
     }
 
     public void removeGame(Game game) {

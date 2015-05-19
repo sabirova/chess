@@ -17,7 +17,6 @@ public class Client {
             thread.start();
             messenger.waitMessage();
         } catch (IOException ex) {
-            //ex.printStackTrace();
             System.out.println("Connection closed");
         }
 

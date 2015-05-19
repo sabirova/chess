@@ -24,10 +24,9 @@ public class ClientThread extends Thread {
             messenger = new ClientThreadMessenger(server, new Messenger(socket));
             messenger.getMessenger().sendMessageXML(new Message(Command.SERVER,"Connected"));
         } catch (SocketException ex) {
-            System.out.println("Connection error");
+            ServerLogger.error(ClientThread.class.toString() + ex);
         } catch (IOException ex) {
-            //TODO: logging
-            ex.printStackTrace();
+            ServerLogger.error(ClientThread.class.toString() + ex);
         }
         start();
     }
@@ -41,10 +40,10 @@ public class ClientThread extends Thread {
             }
         } catch (SocketException ex) {
             server.getClients().remove(player);
-            System.out.println("Player " + player + " left");
+            ServerLogger.error(ClientThread.class.toString() + ex);
         } catch (IOException ex) {
             server.getClients().remove(player);
-            System.out.printf("player " + player + " left");
+            ServerLogger.error(ClientThread.class.toString() + ex);
         }
     }
 
@@ -55,7 +54,7 @@ public class ClientThread extends Thread {
             }
             server.getClients().put(player, this);
         } catch (IOException ex) {
-            System.out.println("Login error");
+            ServerLogger.error(ClientThread.class.toString() + ex);
         }
     }
 
