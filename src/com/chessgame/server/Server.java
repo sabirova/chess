@@ -53,12 +53,34 @@ public class Server {
         Game game = new Game(whitePlayer, blackPlayer);
     }
 
-    public void createGame(Server server, ClientThread whitePlayer, ClientThread blackPlayer) throws IOException {
-        Game game = new Game(whitePlayer, blackPlayer);
+    public void createGame(Player whitePlayer, Player blackPlayer) throws IOException {
+        Game game = new Game(clients.get(whitePlayer), clients.get(blackPlayer));
         games.add(game);
-        whitePlayer.getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "game"));
-        blackPlayer.getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "game"));
         int result = game.play();
+        switch (result) {
+            case 0: {
+                whitePlayer.drawGame(blackPlayer.getRating());
+                blackPlayer.drawGame(whitePlayer.getRating());
+                clients.get(whitePlayer).getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "draw. Rating: " + whitePlayer.getRating()));
+                clients.get(blackPlayer).getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "draw. Rating: " + blackPlayer.getRating()));
+                break;
+            }
+            case 1: {
+                whitePlayer.winGame(blackPlayer.getRating());
+                blackPlayer.loseGame();
+                clients.get(whitePlayer).getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "you won. Rating: " + whitePlayer.getRating()));
+                clients.get(blackPlayer).getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "you lost. Rating: " + blackPlayer.getRating()));
+                break;
+            }
+            case 2: {
+                whitePlayer.loseGame();
+                blackPlayer.winGame(whitePlayer.getRating());
+                clients.get(whitePlayer).getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "you lost. Rating: " + whitePlayer.getRating()));
+                clients.get(blackPlayer).getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, "you won. Rating: " + blackPlayer.getRating()));
+                break;
+            }
+        }
+
     }
 
     public void removeGame(Game game) {

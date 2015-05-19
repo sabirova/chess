@@ -8,7 +8,7 @@ public class Player {
     private Color color;
     private String name;
     private boolean free = true;
-    private int rating;
+    private int rating = 10;
     private int gamesCount;
     private int winGames;
     private int losGames;
@@ -77,12 +77,12 @@ public class Player {
     public void winGame(int opponentRating) {
         gamesCount++;
         winGames++;
-        rating = (int)(opponentRating * 0.25);
+        rating = rating + (int)(opponentRating * 0.25);
     }
 
     public void drawGame(int opponentRating) {
         gamesCount++;
-        rating = (int)(opponentRating * 0.125);
+        rating = rating + (int)(opponentRating * 0.125);
     }
 
     public boolean isOwnPiece(Piece piece){

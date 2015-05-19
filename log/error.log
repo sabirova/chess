@@ -12,3 +12,13 @@
 2015-05-19 16:08:36,358 [Thread-3] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
 2015-05-19 16:13:27,968 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
 2015-05-19 16:13:29,952 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:34:13,234 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:34:14,859 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:38:57,238 [Thread-3] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:38:58,638 [Thread-2] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:48:49,585 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:48:51,040 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:53:26,872 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:53:28,114 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:54:17,947 [Thread-1] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset
+2015-05-19 16:54:19,591 [Thread-0] ERROR ErrorFileLogger - class com.chessgame.server.ClientThreadjava.net.SocketException: Connection reset

@@ -101,48 +101,26 @@ public class ClientThreadMessenger {
             anotherClientThread = server.getClients().get(anotherPlayer);
             anotherClientThread.getMessenger().getMessenger().sendMessageXML
                     (new Message(Command.SERVER, "Player " + player + " wants play with you. Enter: Accept or Refuse"));
-            /*if (getAcceptForPlay(anotherClientThread)) {
-                player.setFree(false);
-                anotherPlayer.setFree(false);
-                server.createGame(server, server.getClients().get(player), anotherClientThread);
-            } else {
-                messenger.sendMessageXML(new Message(Command.SERVER, "Player " + anotherPlayer + " refused to play"));
-            }*/
         } else {
             messenger.sendMessageXML(new Message(Command.SERVER, "This player is not in the system"));
         }
     }
 
-   /* public boolean getAcceptForPlay(ClientThread anotherClientThread) throws IOException {
-        anotherClientThread.getMessenger().getMessenger().sendMessageXML
-                (new Message(Command.SERVER, "Player " + player + " wants play with you. Enter: Accept or Refuse"));
-        Message accessMessage;
-        accessMessage = anotherClientThread.getMessenger().getMessenger().getMessageXML();
-        if (accessMessage != null && accessMessage.getCommand() == Command.ACCEPT) {
-            return true;
-        }
-        accessMessage = messenger.getMessageXML();
-        if (accessMessage != null && accessMessage.getCommand() == Command.ACCEPT) {
-            return true;
-        }
-        return false;
-    }*/
-
     public void acceptMessage(String name) throws IOException{
         Player anotherPlayer = new Player(name);
-        ClientThread anotherClientThread;
         if (server.getClients().containsKey(new Player(name))) {
-            anotherClientThread = server.getClients().get(anotherPlayer);
             player.setFree(false);
             anotherPlayer.setFree(false);
-            server.createGame(server, server.getClients().get(player), anotherClientThread);
+            server.createGame(player, anotherPlayer);
         } else {
             messenger.sendMessageXML(new Message(Command.SERVER, "This player is not in the system"));
         }
     }
 
     public void turn(String text) throws IOException {
-        //anotherClientThread.getMessenger().getMessenger().sendMessageXML(new Message(Command.SERVER, text));
+        if (!server.getClients().get(player).isCanMove()) {
+            messenger.sendMessageXML(new Message(Command.SERVER, "Not you turn"));
+        }
     }
 
 

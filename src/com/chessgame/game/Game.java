@@ -31,8 +31,8 @@ public class Game {
             Message m;
             whiteMessenger.sendMessageXML(new Message(Command.SERVER, board.drawBoard()));
             blackMessenger.sendMessageXML(new Message(Command.SERVER, board.drawBoard()));
-            while((m = whiteMessenger.getMessageXML()) == null){}
             checkmate = true;
+            result = 1;
         }
         return result;
     }
